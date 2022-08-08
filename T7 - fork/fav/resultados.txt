@@ -1,0 +1,152 @@
+Sistema operativo utilizado
+Linux debian11mate 5.10.0-15-amd64 #1 SMP Debian 5.10.120-1 (2022-06-09) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o fav.bin-san
+./fav.bin-san
+Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
+Calculando en paralelo
+Semilla inicial para proceso 2771 es 564969382
+Semilla inicial para proceso 2776 es 1835183088
+Semilla inicial para proceso 2773 es 1430092905
+Semilla inicial para proceso 2778 es 1422590834
+Semilla inicial para proceso 2774 es 1754376246
+Semilla inicial para proceso 2777 es 1749971539
+Semilla inicial para proceso 2775 es 704916011
+Semilla inicial para proceso 2772 es 1167120550
+Casos favorables con 125000 repeticiones para proceso 2777=20886
+Casos favorables con 125000 repeticiones para proceso 2771=21020
+Casos favorables con 125000 repeticiones para proceso 2774=20883
+Casos favorables con 125000 repeticiones para proceso 2778=20950
+Casos favorables con 125000 repeticiones para proceso 2775=20950
+Casos favorables con 125000 repeticiones para proceso 2773=20715
+Casos favorables con 125000 repeticiones para proceso 2772=20839
+Casos favorables con 125000 repeticiones para proceso 2776=21017
+fav=167260  pbb=0.167260  delta=0.000593
+Test 1 aprobado
+
+--------------------------------------------------
+
+Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
+Precalentando secuencialmente
+Semilla inicial para proceso 2770 es 1422590834
+Casos favorables con 20000 repeticiones para proceso 2770=971
+fav=971 pbb=0.048550
+Calculando secuencialmente con rep=2000000
+Semilla inicial para proceso 2770 es 1422590834
+Casos favorables con 2000000 repeticiones para proceso 2770=97578
+Tiempo= 497, fav=97578 pbb=0.048789
+
+-----
+Calculando en paralelo con rep=2000000, intento 1
+Semilla inicial para proceso 2787 es 747550898
+Semilla inicial para proceso 2790 es 864592931
+Semilla inicial para proceso 2788 es 1715998055
+Semilla inicial para proceso 2789 es 1048065386
+Casos favorables con 500000 repeticiones para proceso 2790=24202
+Casos favorables con 500000 repeticiones para proceso 2789=24185
+Casos favorables con 500000 repeticiones para proceso 2787=24192
+Casos favorables con 500000 repeticiones para proceso 2788=24436
+Tiempo= 282  speedup= 1.76241  fav=97015  pbb=0.048508  delta=0.005770
+Test 2 aprobado
+
+Felicitaciones: su tarea funciona
+==== run-g ====
+gcc -g -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o fav.bin-g
+./fav.bin-g
+Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
+Calculando en paralelo
+Semilla inicial para proceso 2811 es 1180101297
+Semilla inicial para proceso 2817 es 1183134723
+Casos favorables con 125000 repeticiones para proceso 2817=20965
+Semilla inicial para proceso 2816 es 364695208
+Semilla inicial para proceso 2818 es 479166697
+Casos favorables con 125000 repeticiones para proceso 2816=20959
+Semilla inicial para proceso 2813 es 766590384
+Casos favorables con 125000 repeticiones para proceso 2811=20638
+Semilla inicial para proceso 2814 es 1601882362
+Casos favorables con 125000 repeticiones para proceso 2813=20772
+Semilla inicial para proceso 2815 es 2144420209
+Semilla inicial para proceso 2812 es 807997218
+Casos favorables con 125000 repeticiones para proceso 2812=20888
+Casos favorables con 125000 repeticiones para proceso 2818=20826
+Casos favorables con 125000 repeticiones para proceso 2815=20906
+Casos favorables con 125000 repeticiones para proceso 2814=20822
+fav=166776  pbb=0.166776  delta=0.000109
+Test 1 aprobado
+
+--------------------------------------------------
+
+Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
+Precalentando secuencialmente
+Semilla inicial para proceso 2810 es 479166697
+Casos favorables con 200000 repeticiones para proceso 2810=9696
+fav=9696 pbb=0.048480
+Calculando secuencialmente con rep=20000000
+Semilla inicial para proceso 2810 es 479166697
+Casos favorables con 20000000 repeticiones para proceso 2810=970517
+Tiempo= 2356, fav=970517 pbb=0.048526
+
+-----
+Calculando en paralelo con rep=20000000, intento 1
+Semilla inicial para proceso 2819 es 2034462482
+Semilla inicial para proceso 2820 es 1123575074
+Semilla inicial para proceso 2822 es 849767883
+Semilla inicial para proceso 2821 es 1272972870
+Casos favorables con 5000000 repeticiones para proceso 2822=242528
+Casos favorables con 5000000 repeticiones para proceso 2821=242236
+Casos favorables con 5000000 repeticiones para proceso 2820=241571
+Casos favorables con 5000000 repeticiones para proceso 2819=243077
+Tiempo= 1070  speedup= 2.20187  fav=969412  pbb=0.048471  delta=0.001139
+Test 2 aprobado
+
+Felicitaciones: su tarea funciona
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o fav.bin
+./fav.bin
+Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
+Calculando en paralelo
+Semilla inicial para proceso 2838 es 1741041362
+Semilla inicial para proceso 2845 es 388586073
+Casos favorables con 125000 repeticiones para proceso 2838=21043
+Semilla inicial para proceso 2843 es 1750119816
+Semilla inicial para proceso 2844 es 1045272774
+Semilla inicial para proceso 2840 es 260352951
+Casos favorables con 125000 repeticiones para proceso 2843=20972
+Semilla inicial para proceso 2842 es 723007407
+Semilla inicial para proceso 2841 es 208488500
+Casos favorables con 125000 repeticiones para proceso 2841=20829
+Casos favorables con 125000 repeticiones para proceso 2845=20883
+Casos favorables con 125000 repeticiones para proceso 2840=20705
+Casos favorables con 125000 repeticiones para proceso 2844=20749
+Semilla inicial para proceso 2839 es 1000716482
+Casos favorables con 125000 repeticiones para proceso 2842=20796
+Casos favorables con 125000 repeticiones para proceso 2839=20896
+fav=166873  pbb=0.166873  delta=0.000206
+Test 1 aprobado
+
+--------------------------------------------------
+
+Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
+Precalentando secuencialmente
+Semilla inicial para proceso 2837 es 388586073
+Casos favorables con 200000 repeticiones para proceso 2837=9725
+fav=9725 pbb=0.048625
+Calculando secuencialmente con rep=20000000
+Semilla inicial para proceso 2837 es 388586073
+Casos favorables con 20000000 repeticiones para proceso 2837=970154
+Tiempo= 730, fav=970154 pbb=0.048508
+
+-----
+Calculando en paralelo con rep=20000000, intento 1
+Semilla inicial para proceso 2849 es 735430421
+Semilla inicial para proceso 2847 es 785853287
+Semilla inicial para proceso 2848 es 896093182
+Semilla inicial para proceso 2846 es 2058213555
+Casos favorables con 5000000 repeticiones para proceso 2849=241898
+Casos favorables con 5000000 repeticiones para proceso 2847=242139
+Casos favorables con 5000000 repeticiones para proceso 2848=242520
+Casos favorables con 5000000 repeticiones para proceso 2846=242140
+Tiempo= 467  speedup= 1.56317  fav=968697  pbb=0.048435  delta=0.001502
+Test 2 aprobado: speedup >= 1.5x
+
+Felicitaciones: su tarea funciona

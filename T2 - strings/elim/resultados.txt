@@ -1,0 +1,47 @@
+Sistema operativo utilizado
+Linux debian11mate 5.10.0-12-amd64 #1 SMP Debian 5.10.103-1 (2022-03-07) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror -std=c18  elim.c test-elim.c elim.h -lm -o elim.bin-san
+./elim.bin-san
+Tests de eliminar_espacios
+Tests de eliminacion_espacios
+Tests largos
+13508 KBytes usados
+20772 KBytes usados
+Tiempo de cpu usado por su version: 69 milisegundos
+Aprobado
+Felicitaciones, todos los tests funcionan correctamente
+
+Verificando que no pide mas memoria de la necesaria
+Test aprobado
+==== run-g ====
+gcc -g -Wall -Werror -std=c18  elim.c test-elim.c elim.h -lm -o elim.bin-g
+./elim.bin-g
+Tests de eliminar_espacios
+Tests de eliminacion_espacios
+Tests largos
+3160 KBytes usados
+3160 KBytes usados
+Tiempo de cpu usado por su version: 57 milisegundos
+Aprobado
+Felicitaciones, todos los tests funcionan correctamente
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -std=c18  elim.c test-elim.c elim.h -lm -o elim.bin
+Midiendo cuanto demora la solucion del profesor
+rm -f tiempo-ref.txt
+chmod +x prof.ref
+./prof.ref ref > /dev/null
+Tiempo de referencia =  9630
+Verificando y comparando con su solucion
+./elim.bin 9630
+Tests de eliminar_espacios
+Tests de eliminacion_espacios
+Tests largos
+3256 KBytes usados
+Tiempo de cpu usado por la versión del profesor: 9630 milisegundos
+Intento 1
+3688 KBytes usados
+Tiempo de cpu usado por su version: 9556 milisegundos
+Porcentaje de sobrecosto: 0 %
+Aprobado
+Felicitaciones, todos los tests funcionan correctamente

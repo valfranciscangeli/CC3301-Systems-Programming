@@ -1,0 +1,112 @@
+Sistema operativo utilizado
+Linux debian11mate 5.10.0-13-amd64 #1 SMP Debian 5.10.106-1 (2022-03-17) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror -std=c18  seleccion.c test-seleccion.c seleccion.h -lm -o seleccion.bin-san
+./seleccion.bin-san
+====================================
+Tests de la funcion selprim
+====================================
+
+Caso arbol nulo: debe continuar vacio
+Caso arbol de un nodo con c='a'
+Caso arbol 'b' con subnodo 'a' la izquierda
+Caso arbol 'a' con subnodo 'b' a la derecha
+Caso arbol 'b' con subnodo izquierdo 'a' y subnodo derecho 'c'
+Caso abb del enunciado
+Caso abbs de 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+=============================
+Tests de la funcion ultimos
+=============================
+
+Caso arbol nulo
+Caso arbol de un nodo con c='a'
+Caso arbol 'b' con subnodo 'a' la izquierda
+Caso arbol 'a' con subnodo 'b' a la derecha
+Caso arbol 'b' con subnodo izquierdo 'a' y subnodo derecho 'c'
+Caso abb del enunciado
+Caso arboles de 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+arbol de 2000 nodos
+Tiempo selprim = 144 milisegundos
+arbol de 1400 nodos
+Tiempo ultimos = 1411 milisegundos
+Felicitaciones: su solucion es correcta
+==== run-g ====
+gcc -g -Wall -Werror -std=c18  seleccion.c test-seleccion.c seleccion.h -lm -o seleccion.bin-g
+./seleccion.bin-g
+====================================
+Tests de la funcion selprim
+====================================
+
+Caso arbol nulo: debe continuar vacio
+Caso arbol de un nodo con c='a'
+Caso arbol 'b' con subnodo 'a' la izquierda
+Caso arbol 'a' con subnodo 'b' a la derecha
+Caso arbol 'b' con subnodo izquierdo 'a' y subnodo derecho 'c'
+Caso abb del enunciado
+Caso abbs de 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+=============================
+Tests de la funcion ultimos
+=============================
+
+Caso arbol nulo
+Caso arbol de un nodo con c='a'
+Caso arbol 'b' con subnodo 'a' la izquierda
+Caso arbol 'a' con subnodo 'b' a la derecha
+Caso arbol 'b' con subnodo izquierdo 'a' y subnodo derecho 'c'
+Caso abb del enunciado
+Caso arboles de 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+arbol de 2000 nodos
+Tiempo selprim = 110 milisegundos
+arbol de 1400 nodos
+Tiempo ultimos = 183 milisegundos
+Felicitaciones: su solucion es correcta
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -std=c18  seleccion.c test-seleccion.c seleccion.h -lm -o seleccion.bin
+Midiendo cuanto demora la solucion del profesor
+rm -f tiempo-ref.txt
+chmod +x prof.ref
+./prof.ref ref > /dev/null
+Tiempos de referencia =  11438 8997
+Verificando y comparando con su solucion
+./seleccion.bin 11438 8997
+====================================
+Tests de la funcion selprim
+====================================
+
+Caso arbol nulo: debe continuar vacio
+Caso arbol de un nodo con c='a'
+Caso arbol 'b' con subnodo 'a' la izquierda
+Caso arbol 'a' con subnodo 'b' a la derecha
+Caso arbol 'b' con subnodo izquierdo 'a' y subnodo derecho 'c'
+Caso abb del enunciado
+Caso abbs de 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+=============================
+Tests de la funcion ultimos
+=============================
+
+Caso arbol nulo
+Caso arbol de un nodo con c='a'
+Caso arbol 'b' con subnodo 'a' la izquierda
+Caso arbol 'a' con subnodo 'b' a la derecha
+Caso arbol 'b' con subnodo izquierdo 'a' y subnodo derecho 'c'
+Caso abb del enunciado
+Caso arboles de 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+
+==================================
+Benchmark de selprim
+==================================
+
+arbol de 25000 nodos
+Tiempo selprim = 10068 milisegundos
+
+======================
+Benchmark de ultimos
+======================
+
+arbol de 10000 nodos
+Tiempo ultimos = 9106 milisegundos
+Tiempo de referencia para selprim = 11438 milisegundos
+Porcentaje de sobrecosto de selprim: -11 %
+Tiempo de referencia para ultimos = 8997 milisegundos
+Porcentaje de sobrecosto de ultimos: 1 %
+Felicitaciones: su solucion es correcta y eficiente
